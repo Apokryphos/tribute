@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  background-color: black;//$page-bg-color;
+  background-color: black;
   color: $text-color;
   font-family: $font-primary;
   margin: 0;
@@ -172,48 +172,6 @@ ul, li {
 .showcase img:hover:not(.selected) {
   filter: grayscale(50%);
 }
-
-
-
-
-
-
-
-//
-// .showcase {
-//   background-color: black;
-//   border: $border-secondary;
-//   height: $img-height;
-//   padding: $panel-gutter-size;
-//   position: relative;
-//   width: calc(#{$img-count} * #{$img-slice-width} + #{$img-slice-width} + #{$img-count} * #{$panel-gutter-size});
-// }
-//
-// .showcase div {
-//   border-right: $panel-gutter-size solid black;
-//   cursor: pointer;
-//   float: left;
-//   height: $img-height;
-//   overflow: hidden;
-//   position: relative;
-//   transition: all 0.3s ease;
-//   width: $img-slice-width;
-// }
-//
-// .showcase img {
-//   filter: grayscale(100%);
-//   height: $img-height;
-//   margin-left: -50%;
-//   transition: all 0.3s ease;
-//   width: $img-full-width;
-// }
-//
-// .showcase div:hover {
-// }
-//
-// .showcase img:hover:not(.selected) {
-//   filter: grayscale(50%);
-// }
 
 div.selected {
   width: $img-full-width;
