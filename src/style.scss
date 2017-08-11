@@ -233,13 +233,12 @@ div.selected img {
   max-height: 10em;
 }
 
-.cover-right {
-  float: right;
-  height: 10em;
-  margin: 1em;
-  max-height: 10em;
-}
-
+// .cover-right {
+//   float: right;
+//   height: 10em;
+//   margin: 1em;
+//   max-height: 10em;
+// }
 
 .timeline {
   margin-bottom: 5em;
@@ -336,4 +335,8 @@ div.selected img {
 .timeline-item p {
   overflow: hidden;
   text-align: left;
+}
+
+.timeline-item img {
+  // max-width: 128px;
 }
