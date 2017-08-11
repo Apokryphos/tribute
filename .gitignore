@@ -1,0 +1,5 @@
+.sass-cache/
+*.css.map
+
+# Ignore output CSS
+style.css

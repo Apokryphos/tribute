@@ -1,0 +1,381 @@
+$page-bg-color: #1A1C25;//#2A212A;
+$text-color: #C8AB95;
+
+$heading-primary-color: #C99541;
+$heading-secondary-color: #E33E1E;
+
+$border-primary-color: lighten($page-bg-color, 15%);
+
+$border-primary: 2px solid $border-primary-color;
+$border-secondary: 2px solid $heading-primary-color;
+
+$panel-gutter-size: 4px;
+
+$img-count: 7;
+$img-full-width: 256px;
+$img-slice-width: 128px;
+$img-height: 512px;
+
+$font-primary: 'Raleway', sans-serif;
+$font-secondary: 'Libre Baskerville', serif;
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;//$page-bg-color;
+  color: $text-color;
+  font-family: $font-primary;
+  margin: 0;
+  padding: 0;
+}
+
+strong {
+  color: $heading-secondary-color;
+}
+
+em {
+  color: $heading-primary-color;
+}
+
+a {
+  color: $heading-primary-color;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: $heading-secondary-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-secondary;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: $heading-primary-color;
+  font-size: 4rem;
+  position: relative;
+  text-shadow: 3px 2px 1px darken($page-bg-color, 5%);
+}
+
+h2 {
+  color: $heading-secondary-color;
+}
+
+ul, li {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+.solo-img {
+  border: 2px solid $border-primary-color;
+}
+
+.collaborators-container {
+  margin: auto;
+  padding: 0;
+  text-align: center;
+  width: 50em;
+}
+
+.collaborators {
+  float: left;
+  height: 13em;
+  margin: auto;
+  padding: 0;
+  width: 33%;
+}
+
+.root-container {
+  background-color: darken($page-bg-color, 5%);
+  border: $border-primary;
+  box-shadow: inset 0px 0px 2px darken($page-bg-color, 10%);
+  height: 100%;
+  margin: 3em auto;
+  padding: 3em 0;
+  text-align: center;
+  width: 80%;
+}
+
+.header-container {
+}
+
+.portrait {
+  background-color: darken($page-bg-color, 5%);
+  border: 2px solid $heading-primary-color;
+  border-radius: 50%;
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  width: 350px;
+}
+
+.portrait-container {
+  background-color: darken($page-bg-color, 5%);
+  border: 2px solid lighten($page-bg-color, 20%);
+  border-radius: 50%;
+  height: 358px;
+  margin: auto;
+  position: relative;
+  width: 358px;
+}
+
+.ornate-container {
+  background-color: $page-bg-color;
+  border: 4px double lighten($page-bg-color, 20%);
+  display: inline-block;
+  height: calc(#{$img-height} + $panel-gutter-size * 2);
+  margin: 1em 1em 0 1em;
+  padding: 8px;
+}
+
+
+
+.showcaser {
+  background-color: black;
+  border: $border-secondary;
+  height: $img-height;
+  padding: $panel-gutter-size;
+  position: relative;
+  width: calc(3 * #{$img-slice-width} + #{$img-slice-width} + 3 * #{$panel-gutter-size});
+  display: inline-block;
+  margin: 0;
+}
+
+.showcaser div {
+  border-right: $panel-gutter-size solid black;
+  cursor: pointer;
+  float: left;
+  // height: $img-height;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  width: $img-slice-width;
+}
+
+.showcaser img {
+  filter: grayscale(100%);
+  // height: $img-height;
+  margin-left: -50%;
+  transition: all 0.3s ease;
+  width: $img-full-width;
+}
+
+.showcaser div:hover {
+}
+
+.showcaser img:hover:not(.selected) {
+  filter: grayscale(50%);
+}
+
+
+
+
+
+
+
+
+.showcase {
+  background-color: black;
+  border: $border-secondary;
+  height: $img-height;
+  padding: $panel-gutter-size;
+  position: relative;
+  width: calc(#{$img-count} * #{$img-slice-width} + #{$img-slice-width} + #{$img-count} * #{$panel-gutter-size});
+}
+
+.showcase div {
+  border-right: $panel-gutter-size solid black;
+  cursor: pointer;
+  float: left;
+  height: $img-height;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  width: $img-slice-width;
+}
+
+.showcase img {
+  filter: grayscale(100%);
+  height: $img-height;
+  margin-left: -50%;
+  transition: all 0.3s ease;
+  width: $img-full-width;
+}
+
+.showcase div:hover {
+}
+
+.showcase img:hover:not(.selected) {
+  filter: grayscale(50%);
+}
+
+div.selected {
+  width: $img-full-width;
+}
+
+div.selected img {
+  filter: none;
+  margin-left: 0%;
+}
+
+.summaryContainer {
+  background-color: black;
+  border: $border-secondary;
+  // height: 10em;
+  // padding: 1em;
+  margin: 0;
+  position: relative;
+  text-align: left;
+  // width: 50em;
+}
+
+.summaryContainer {
+  // clear: left;
+  display: inline-block;
+  height: $img-height + $panel-gutter-size * 2;
+  // height: 520px;
+  width: 30em;
+  // margin: 0;
+  // padding: 0;
+  // position: relative;
+  // padding: $panel-gutter-size * 2;
+  // height: 100%;
+}
+
+.summaryContent {
+  position: absolute;
+  margin: 1em;
+}
+
+.summaryContent h2 {
+  // line-height: 50%;
+  // margin: 0;
+  // padding: 0;
+}
+
+.blurb {
+  // border: 1px red solid;
+  height: 12em;
+  // margin: 1em;
+  padding: 1em;
+  text-align: left;
+  width: 50em;
+}
+
+.cover {
+  float: left;
+  height: 10em;
+  margin: 1em;
+  max-height: 10em;
+}
+
+.cover-right {
+  float: right;
+  height: 10em;
+  margin: 1em;
+  max-height: 10em;
+}
+
+
+.timeline {
+  margin-bottom: 5em;
+}
+
+//  Timeline vertical line
+.timeline ul li {
+  background: $border-primary-color;
+  list-style-type: none;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 1em;
+  width: 3px;
+}
+
+//  Timeline dots
+.timeline ul li::after {
+  background: $heading-secondary-color;
+  border-radius: 50%;
+  bottom: 0;
+  content: '';
+  height: 32px;
+  position: absolute;
+  // left: 50%;
+  transform: translate(-50%, 4px);
+  width: 32px;
+  z-index: 10;
+}
+
+//  Timeline item DIVs
+.timeline ul li div {
+  border: $border-primary;
+  bottom: 0;
+  padding: 1em;
+  position: relative;
+  background: lighten($page-bg-color, 5%);
+  width: 30em;
+}
+
+.timeline ul li div::before {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+//  Timeline odd / right item DIVs
+.timeline ul li:nth-child(odd) div {
+  // left: 45px;
+  left: 3em;
+}
+
+//  Timeline right connecting horz. line
+.timeline ul li:nth-child(odd) div::before {
+  border-color: $border-primary-color;
+  border-width: 3px 0 0 0;
+  content: ' ';
+  position: absolute;
+  left: -3em;
+  width: 3em;
+}
+
+//  Timeline even / left item DIVs
+.timeline ul li:nth-child(even) div {
+  left: -35em;
+}
+
+//  Timeline left connecting horz. line
+.timeline ul li:nth-child(even) div::before {
+  border-color: $border-primary-color;
+  border-width: 0 0 3px 0;
+  position: absolute;
+  content: ' ';
+  right: -3em;
+  width: 3em;
+}
+
+.timeline-item {
+  margin-top: 1em;
+}
+
+.timeline ul li:nth-child(even) img {
+  float: left;
+  // width: 128px;
+}
+
+.timeline ul li:nth-child(odd) img {
+  float: right;
+  // width: 128px;
+}
+
+.timeline-item p {
+  overflow: hidden;
+  text-align: left;
+}
