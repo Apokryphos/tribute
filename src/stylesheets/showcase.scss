@@ -3,9 +3,9 @@
 $panel-count: 3;
 $panel-gutter-size: 4px;
 
-$panel-width: 128px;
+$panel-width: 136px;
 $panel-height: 256px;
-$slice-width: 72px;
+$slice-width: 78px;
 
 $small-panel-width: 128px;
 $small-panel-height: 256px;
@@ -15,21 +15,21 @@ $large-panel-width: 256px;
 $large-panel-height: 512px;
 $large-slice-width: 128px;
 
-@function calc-showcase-width($slice-width) {
-  @return $panel-count * $slice-width + $slice-width + $panel-count * $panel-gutter-size;
+@function calc-showcase-width($panel-width, $slice-width) {
+  @return $panel-width + ($panel-count - 1) * $slice-width + $panel-gutter-size;
 }
 
-$showcase-width: calc-showcase-width($slice-width);
-$small-showcase-width: calc-showcase-width($small-slice-width);
-$large-showcase-width: calc-showcase-width($large-slice-width);
+$showcase-width: calc-showcase-width($panel-width, $slice-width);
+$small-showcase-width: calc-showcase-width($small-panel-width, $small-slice-width);
+$large-showcase-width: calc-showcase-width($large-panel-width, $large-slice-width);
 
 .showcase {
   background-color: black;
-  border: $border-secondary;
+  box-sizing: border-box;
   height: $panel-height;
-  margin: 0;
-  padding: $panel-gutter-size;
-  width: $showcase-width;
+  padding-bottom: $panel-gutter-size;
+  padding-left: $panel-gutter-size;
+  padding-top: $panel-gutter-size;
 
   @include media-small {
     float: left;
@@ -46,35 +46,38 @@ $large-showcase-width: calc-showcase-width($large-slice-width);
 //  Panel image containers
 .showcase div {
   border-right: $panel-gutter-size solid black;
+  box-sizing: border-box;
   cursor: pointer;
   float: left;
-  height: $panel-height;
+  height: $panel-height - $panel-gutter-size * 2;
   margin: 0;
+  max-width: 33.33%;
   overflow: hidden;
   padding: 0;
-  position: relative;
   transition: all 0.3s ease;
-  width: $slice-width;
 
   @include media-small {
-    height: $small-panel-height;
+    height: $small-panel-height - $panel-gutter-size * 2;
+    position: relative;
+    max-width: none;
     width: $small-slice-width;
   }
 
   @include media-large {
-    height: $large-panel-height;
+    height: $large-panel-height - $panel-gutter-size * 2;
+    max-width: none;
     width: $large-slice-width;
   }
 }
 
 .showcase img {
+  box-sizing: border-box;
   filter: grayscale(100%);
   height: $panel-height;
-  margin-left: -50%;
   transition: all 0.3s ease;
-  width: $panel-width;
 
   @include media-small {
+    margin-left: -50%;
     height: $small-panel-height;
     width: $small-panel-width;
   }
@@ -90,8 +93,6 @@ $large-showcase-width: calc-showcase-width($large-slice-width);
 }
 
 div.selected {
-  width: $panel-width;
-
   @include media-small {
     width: $small-panel-width;
   }
@@ -108,9 +109,9 @@ div.selected img {
 
 .summaryContainer {
   background-color: black;
-  border: $border-secondary;
+  border-top: $border-primary-ornate;
   box-sizing: border-box;
-  height: $panel-height + $panel-gutter-size * 3;
+  height: $panel-height;
   margin: 0;
   padding: 0;
   position: relative;
@@ -118,13 +119,15 @@ div.selected img {
   width: 100%;
 
   @include media-small {
-    height: $small-panel-height + $panel-gutter-size * 3;
+    border-top: none;
+    border-left: $border-primary-ornate;
+    height: $small-panel-height;
     margin-left: $small-showcase-width;
     width: calc(100% - #{$small-showcase-width});
   }
 
   @include media-large {
-    height: $large-panel-height + $panel-gutter-size * 3;
+    height: $large-panel-height;
     margin-left: $large-showcase-width;
     width: calc(100% - #{$large-showcase-width});
   }

@@ -136,7 +136,8 @@ ul, li {
 }
 
 .solo-img {
-  border: $border-secondary;
+  border: $border-primary-ornate;
+  border-radius: 0.25em;
   box-sizing: border-box;
   margin-bottom: 2em;
   max-width: 60em;
