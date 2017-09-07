@@ -77,9 +77,6 @@ ul, li {
 }
 
 .root-container {
-  // background-color: darken($page-bg-color, 5%);
-  // border: $border-primary;
-  // box-shadow: inset 0px 0px 2px darken($page-bg-color, 10%);
   box-sizing: border-box;
   height: 100%;
   margin: 0 auto;
@@ -89,23 +86,7 @@ ul, li {
   width: 100%;
 }
 
-.container {
-  background-color: $section-bg-color;
-  border: $border-primary-ornate;
-  border-radius: 0.25em;
-  box-sizing: border-box;
-  margin: 0 0 2em 0;
-  padding: 0;//1em;
-  text-align: center;
-  width: 100%;
-
-  @include media-medium {
-    // margin: 1em;
-    // width: calc(100% - 2em);
-  }
-}
-
-.sectionContainer {
+.section-container {
   background-color: $section-bg-color;
   border: $border-primary-ornate;
   border-radius: 0.25em;
@@ -116,7 +97,7 @@ ul, li {
   width: 100%;
 }
 
-.sectionTitle {
+.section-title {
   background-color: $section-title-bg-color;
   border-bottom: $border-primary-ornate;
   box-sizing: border-box;
@@ -130,7 +111,7 @@ ul, li {
   }
 }
 
-.sectionContent {
+.section-content {
   box-sizing: border-box;
   padding: 1em;
 }
@@ -171,14 +152,32 @@ ul, li {
   }
 }
 
-.blurb {
-  min-height: 12em;
-  text-align: left;
-}
+.books-content {
+  height: 100%;
+  margin: 0 auto;
+  min-height: 14em;
 
-.cover {
-  float: left;
-  height: 10em;
-  margin: 1em;
-  max-height: 10em;
+  p {
+    text-align: left;
+  }
+
+  ul li {
+    padding-bottom: 1em;
+    text-align: left;
+
+    @include media-medium {
+      padding-bottom: 0;
+    }
+  }
+
+  img {
+    margin: 0 auto;
+    max-height: 10em;
+    height: 14em;
+
+    @include media-medium {
+      float: left;
+      margin-right: 1em;
+    }
+  }
 }

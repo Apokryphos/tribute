@@ -2,12 +2,9 @@
 @import "media";
 
 .collaborators-container {
-  //  Fixed height container for single column
-  height: 25em;
-
   //  Fixed height container for three columns
   @include media-medium {
-    height: 18em;
+    height: 14em;
   }
 }
 

@@ -114,7 +114,7 @@ $large-timeline-item-offset: calc-timeline-item-offset($large-timeline-item-base
 .timeline-item {
   background-color: $timeline-item-title-bg-color;
   box-sizing: border-box;
-  margin-top: 1em;
+  // margin-top: 1em;
   margin: 0;
   padding: 0;
   width: 100%;
