@@ -155,7 +155,7 @@ ul, li {
 .books-content {
   height: 100%;
   margin: 0 auto;
-  min-height: 14em;
+  min-height: 12em;
 
   p {
     text-align: left;
@@ -165,7 +165,7 @@ ul, li {
     padding-bottom: 1em;
     text-align: left;
 
-    @include media-medium {
+    @include media-small {
       padding-bottom: 0;
     }
   }
@@ -173,7 +173,7 @@ ul, li {
   img {
     margin: 0 auto;
     max-height: 10em;
-    height: 14em;
+    height: 12em;
 
     @include media-medium {
       float: left;
