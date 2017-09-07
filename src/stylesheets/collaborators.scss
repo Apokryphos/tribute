@@ -1,0 +1,24 @@
+@import "base";
+@import "media";
+
+.collaborators-container {
+  //  Fixed height container for single column
+  height: 25em;
+
+  //  Fixed height container for three columns
+  @include media-medium {
+    height: 18em;
+  }
+}
+
+.collaborators-column {
+  //  Three-column container for collaborator lists
+  @include media-medium {
+    float: left;
+    width: 33%;
+  }
+
+  h3 {
+    color: $secondary-color;
+  }
+}

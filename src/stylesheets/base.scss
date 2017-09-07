@@ -1,0 +1,23 @@
+$page-bg-color: #000;
+$section-bg-color: #1A1C25;
+$section-title-bg-color: darken($section-bg-color, 5%);
+$timeline-item-content-bg-color: $section-bg-color;
+$timeline-item-title-bg-color: lighten($timeline-item-content-bg-color, 5%);
+$text-color: #C8AB95;
+
+$primary-color: #C99541;
+$secondary-color: #E33E1E;
+
+$border-primary-color: lighten($section-bg-color, 15%);
+$border-primary: 2px solid $border-primary-color;
+$border-primary-ornate: 4px double $border-primary-color;
+
+$border-secondary-color: $primary-color;
+$border-secondary: 2px solid $border-secondary-color;
+$border-secondary-ornate: 4px double $border-secondary-color;
+
+//  Primary font i.e. font used for most text
+$font-primary: 'Raleway', sans-serif;
+
+//  Secondary font i.e. font used for heading and special text
+$font-secondary: 'Libre Baskerville', serif;
