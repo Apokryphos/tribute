@@ -1,4 +1,5 @@
-dist
+dist/
+intermediate/
 .sass-cache/
 *.css.map
 node_modules/

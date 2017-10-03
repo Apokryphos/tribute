@@ -1,13 +1,13 @@
 const webpack = require('webpack');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const ImageMinMozjpeg = require('imagemin-mozjpeg');
+// const ImageminPlugin = require('imagemin-webpack-plugin').default;
+// const ImageMinMozjpeg = require('imagemin-mozjpeg');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: ['./src/index.js', './src/style.scss'],
+  entry: ['./src/js/index.js', './src/style.scss'],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -49,14 +49,14 @@ module.exports = {
             'sass-loader'
           ]
         })
-      }
+      },
     ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new CopyWebpackPlugin([{ from: 'src/*.html', flatten: true }]),
     // new CopyWebpackPlugin([{ from: 'src/*.css', flatten: true }]),
-    new CopyWebpackPlugin([{ from: 'src/img', to: 'img' }]),
+    new CopyWebpackPlugin([{ from: 'intermediate/img', to: 'img' }]),
     new ExtractTextPlugin({
       filename: 'style.css',
       allChunks: true
@@ -69,17 +69,17 @@ module.exports = {
       }
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      pngquant: {
-        quality: '95-100'
-      },
-      plugins: [
-        ImageMinMozjpeg({
-          quality: 90,
-          progressive: false
-        })
-      ]
-    }),
+    // new ImageminPlugin({
+    //   test: /\.(jpe?g|png|gif|svg)$/i,
+    //   pngquant: {
+    //     quality: '95-100'
+    //   },
+    //   plugins: [
+    //     ImageMinMozjpeg({
+    //       quality: 90,
+    //       progressive: false
+    //     })
+    //   ]
+    // })
   ]
 };

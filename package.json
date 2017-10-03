@@ -4,7 +4,8 @@
   "description": "Tribute page project for freeCodeCamp.",
   "main": "src/index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "npm run build-images && webpack",
+    "build-images": "node build-images.js",
     "start": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,11 +27,13 @@
     "copy-webpack-plugin": "^4.1.0",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.0",
-    "imagemin-mozjpeg": "^6.0.0",
-    "imagemin-webpack-plugin": "^1.5.2",
+    "fs-extra": "^4.0.2",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
+    "sharp": "^0.18.4",
     "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
     "webpack": "^3.6.0"
-  }
+  },
+  "dependencies": {}
 }
