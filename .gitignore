@@ -1,5 +1,7 @@
+dist
 .sass-cache/
 *.css.map
+node_modules/
 
 # Ignore output CSS
 style.css
