@@ -1,5 +1,6 @@
 @import "base";
 
+$timeline-thickness: 3px;
 $timeline-dot-size: 32px;
 $timeline-item-offset: 3em;
 
@@ -41,26 +42,26 @@ $large-timeline-item-offset: calc-timeline-item-offset($large-timeline-item-base
         margin: 0 auto;
         padding-top: 15em;
         position: relative;
-        width: 3px;
+        width: $timeline-thickness;
     }
 
     //  Timeline dots
     ul li::after {
       background: $secondary-color;
-      border: 3px solid $border-primary-color;
+      border: $timeline-thickness solid $border-primary-color;
       border-radius: 50%;
       bottom: 0;
       content: '';
       height: $timeline-dot-size;
       position: absolute;
-      transform: translate(-50%, 1.5px);
+      transform: translate(-50%, $timeline-thickness / 2);
       width: $timeline-dot-size;
       z-index: 10;
     }
 
     ul li div::before {
       border-style: solid;
-      bottom: 12px;
+      bottom: $timeline-dot-size / 2 - $timeline-thickness / 2;//12px;
       content: '';
       position: absolute;
       width: 0;
@@ -75,7 +76,7 @@ $large-timeline-item-offset: calc-timeline-item-offset($large-timeline-item-base
     //  Timeline right connecting horz. line
     ul li:nth-child(odd) div::before {
       border-color: $border-primary-color;
-      border-width: 3px 0 0 0;
+      border-width: $timeline-thickness 0 0 0;
       content: ' ';
       left: -$timeline-item-offset;
       position: absolute;
@@ -90,7 +91,7 @@ $large-timeline-item-offset: calc-timeline-item-offset($large-timeline-item-base
     //  Timeline left connecting horz. line
     ul li:nth-child(even) div::before {
       border-color: $border-primary-color;
-      border-width: 0 0 3px 0;
+      border-width: 0 0 $timeline-thickness 0;
       content: ' ';
       position: absolute;
       right: -$timeline-item-offset;
@@ -121,6 +122,7 @@ $large-timeline-item-offset: calc-timeline-item-offset($large-timeline-item-base
 
   img {
     border: $border-secondary-ornate;
+    box-shadow: $img-box-shadow;
     max-height: 13em;
     margin: 1em;
     max-width: 256px;

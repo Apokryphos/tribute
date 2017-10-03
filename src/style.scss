@@ -171,6 +171,7 @@ ul, li {
   }
 
   img {
+    box-shadow: $img-box-shadow;
     margin: 0 auto;
     max-height: 10em;
     height: 12em;
