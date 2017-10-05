@@ -76,6 +76,10 @@ ul, li {
   padding: 0;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .root-container {
   box-sizing: border-box;
   height: 100%;
@@ -180,5 +184,13 @@ ul, li {
       float: left;
       margin-right: 1em;
     }
+  }
+}
+
+footer {
+  text-align: center;
+
+  img {
+    max-height: 20em;
   }
 }
